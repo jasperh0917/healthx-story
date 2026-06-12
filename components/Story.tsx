@@ -88,14 +88,19 @@ export function Bars({
           transition={{ delay: idx * 0.04, duration: 0.5 }}
           onClick={onPick ? () => onPick(i) : undefined}
           whileHover={onPick ? { x: 4 } : undefined}
-          className={`mb-3 flex items-center gap-3 text-[13px] ${
+          className={`mb-3 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-[13px] ${
             onPick ? "cursor-pointer" : ""
           }`}
         >
-          <span className="w-40 shrink-0 truncate text-slate-400" title={i.label}>
+          {/* mobile: label + value share a row, the bar drops to a full-width line below.
+              desktop (sm+): label · bar · value sit inline. order + flex-wrap handle both. */}
+          <span
+            className="order-1 min-w-0 flex-1 truncate text-slate-400 sm:w-40 sm:flex-none"
+            title={i.label}
+          >
             {i.label}
           </span>
-          <span className="relative h-2 flex-1 overflow-hidden rounded-full bg-white/5">
+          <span className="relative order-3 block h-2 w-full overflow-hidden rounded-full bg-white/5 sm:order-2 sm:w-auto sm:flex-1">
             <motion.span
               initial={{ width: 0 }}
               animate={{ width: `${(100 * i.value) / max}%` }}
@@ -103,7 +108,7 @@ export function Bars({
               className={`absolute inset-y-0 left-0 rounded-full bg-gradient-to-r ${color}`}
             />
           </span>
-          <span className="w-32 shrink-0 text-right font-mono text-xs text-slate-300">
+          <span className="order-2 shrink-0 text-right font-mono text-xs text-slate-300 sm:order-3 sm:w-32">
             {i.display}
           </span>
         </motion.div>
