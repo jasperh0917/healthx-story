@@ -40,6 +40,7 @@ export default function ClaimsExplorer() {
   const fob = useMemo(() => sum(claimsStory.fobByNetwork), [sel]);
   const relation = useMemo(() => sum(claimsStory.relationByNetwork), [sel]);
   const diagnosis = useMemo(() => sum(diagnosisByNetwork), [sel]);
+  const diagTotal = diagnosis.reduce((s, [, v]) => s + v, 0);
 
   const providers = useMemo(() => {
     const m = new Map<string, { aed: number; episodes: number }>();
@@ -146,12 +147,12 @@ export default function ClaimsExplorer() {
       </div>
 
       <div className="glass mt-4 p-7">
-        <p className="eyebrow mb-5">What the spend treats · 16 diagnosis groups</p>
+        <p className="eyebrow mb-5">Top 16 diagnosis groups</p>
         <Bars
           items={diagnosis.map(([label, v]) => ({
             label,
             value: v,
-            display: `${(v / 1e6).toFixed(1)}M`,
+            display: `${(v / 1e6).toFixed(1)}M · ${((100 * v) / diagTotal).toFixed(1)}%`,
             hint: groupHints[label],
           }))}
           color="from-violet-400 to-rose-400"
