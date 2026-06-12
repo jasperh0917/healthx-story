@@ -1,10 +1,24 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { arc } from "@/data/portfolio";
 
 const MONTHS = ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"];
 const EASE = [0.22, 1, 0.36, 1] as const;
+
+/** true below the sm breakpoint — used to give wide charts a taller, fit-to-width aspect on phones */
+function useIsNarrow() {
+  const [narrow, setNarrow] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 640px)");
+    const update = () => setNarrow(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+  return narrow;
+}
 
 /** Cumulative 24-month build-up — 2024 book as the base, renewed + new business stacked on top through 2025. */
 export function GrowthChart() {
@@ -21,7 +35,10 @@ export function GrowthChart() {
   const grandTotal = base2024 + cumRenewal[11] + cumNew[11];
   const max = grandTotal * 1.06;
 
-  const W = 960;
+  // On phones use a narrower viewBox so the chart renders taller (fits width, stays readable)
+  // instead of collapsing into a wide strip.
+  const narrow = useIsNarrow();
+  const W = narrow ? 560 : 960;
   const baseY = 264;
   const chartH = 200;
   const padL = 14;
@@ -55,9 +72,8 @@ export function GrowthChart() {
         </div>
       </div>
 
-      {/* wide chart: keep it legible on narrow screens, scroll horizontally */}
-      <div className="-mx-2 overflow-x-auto px-2">
-      <svg viewBox={`0 0 ${W} 318`} className="w-full min-w-[600px]">
+      {/* fits the width on every screen; narrower viewBox on phones keeps it tall enough to read */}
+      <svg viewBox={`0 0 ${W} 318`} className="w-full">
         {/* scale gridlines */}
         {[50, 100].map((g) => (
           <g key={g}>
@@ -110,7 +126,6 @@ export function GrowthChart() {
           UY 2025 · {y2025.gp.toFixed(1)}M · +{y2025.gpGrowthPct}%
         </text>
       </svg>
-      </div>
 
       <p className="mt-4 font-mono text-[11px] text-slate-500">
         2024 book {y2024.gp.toFixed(1)}M + 2025 renewed {y2025.renewalGp.toFixed(1)}M + new business {y2025.newGp.toFixed(1)}M · lives 9,874 → 11,201 (+{y2025.livesGrowthPct}%)
