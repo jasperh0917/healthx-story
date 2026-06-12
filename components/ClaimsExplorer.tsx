@@ -110,7 +110,7 @@ export default function ClaimsExplorer() {
         </div>
       </div>
 
-      <div className="mt-4 grid gap-4 lg:grid-cols-5">
+      <div className="mt-4 grid gap-4 [&>*]:min-w-0 lg:grid-cols-5">
         <div className="glass p-7 lg:col-span-2">
           <p className="eyebrow mb-5">Top provider groups · AED & per episode</p>
           <Bars

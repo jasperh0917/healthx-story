@@ -311,7 +311,7 @@ function Chapter({
           )}
           <span className="hidden min-h-16 w-px flex-1 bg-gradient-to-b from-white/25 to-transparent lg:block" />
         </div>
-        <div>
+        <div className="min-w-0">
           <p className="eyebrow mb-3">{kicker}</p>
           <p className="max-w-2xl text-[15px] leading-relaxed text-slate-400">{body}</p>
           <div className="mt-7">{children}</div>
