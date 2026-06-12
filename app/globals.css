@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Sora", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --cyan: #22d3ee;
+  --violet: #8b5cf6;
+  --emerald: #34d399;
+  --coral: #fb7185;
+}
+
+html {
+  scroll-behavior: auto; /* Lenis owns scrolling */
+}
+
+body {
+  background: radial-gradient(1200px 800px at 80% -10%, rgba(139, 92, 246, 0.10), transparent 60%),
+    radial-gradient(1000px 700px at -10% 30%, rgba(34, 211, 238, 0.07), transparent 60%),
+    #05070d;
+  overflow-x: hidden;
+}
+
+.glass {
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  border-radius: 1.25rem;
+}
+
+.glow-cyan { box-shadow: 0 0 60px -18px rgba(34, 211, 238, 0.45); }
+.glow-violet { box-shadow: 0 0 60px -18px rgba(139, 92, 246, 0.45); }
+.glow-coral { box-shadow: 0 0 60px -18px rgba(251, 113, 133, 0.4); }
+.glow-emerald { box-shadow: 0 0 60px -18px rgba(52, 211, 153, 0.45); }
+
+.text-grad {
+  background: linear-gradient(92deg, #22d3ee 0%, #8b5cf6 55%, #34d399 110%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hairline { border-color: rgba(255, 255, 255, 0.08); }
+
+.eyebrow {
+  @apply font-mono text-[11px] uppercase tracking-[0.28em] text-cyan-300/80;
+}
+
+::selection { background: rgba(139, 92, 246, 0.4); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ───────────────────────── Light theme ─────────────────────────
+   The dashboard is designed dark-first with hardcoded utility classes;
+   html.light re-skins the finite set of utilities actually in use. */
+html.light body {
+  background: radial-gradient(1200px 800px at 80% -10%, rgba(139, 92, 246, 0.08), transparent 60%),
+    radial-gradient(1000px 700px at -10% 30%, rgba(34, 211, 238, 0.06), transparent 60%),
+    #f3f5fa;
+}
+html.light .glass {
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.75));
+  border: 1px solid rgba(15, 23, 42, 0.09);
+  box-shadow: 0 8px 30px -18px rgba(15, 23, 42, 0.25);
+}
+html.light .glow-cyan { box-shadow: 0 0 50px -20px rgba(8, 145, 178, 0.35); }
+html.light .glow-violet { box-shadow: 0 0 50px -20px rgba(124, 58, 237, 0.3); }
+html.light .glow-coral { box-shadow: 0 0 50px -20px rgba(225, 29, 72, 0.3); }
+html.light .glow-emerald { box-shadow: 0 0 50px -20px rgba(5, 150, 105, 0.35); }
+html.light .hairline { border-color: rgba(15, 23, 42, 0.1); }
+html.light .eyebrow { color: rgba(14, 116, 144, 0.9); }
+html.light .text-white { color: #0f172a; }
+html.light .text-slate-100 { color: #16203a; }
+html.light .text-slate-200 { color: #1e293b; }
+html.light .text-slate-300 { color: #334155; }
+html.light .text-slate-400 { color: #475569; }
+html.light .text-slate-500 { color: #64748b; }
+html.light .text-slate-600 { color: #8b97a8; }
+html.light .text-rose-400 { color: #e11d48; }
+html.light .text-rose-300 { color: #be123c; }
+html.light .\!text-rose-300\/80 { color: rgba(190, 18, 60, 0.9) !important; }
+html.light .text-emerald-300 { color: #047857; }
+html.light .\!text-emerald-300\/80 { color: rgba(4, 120, 87, 0.9) !important; }
+html.light .text-cyan-300 { color: #0e7490; }
+html.light .text-cyan-200 { color: #155e75; }
+html.light .text-violet-300 { color: #6d28d9; }
+html.light .bg-white\/5 { background-color: rgba(15, 23, 42, 0.07); }
+html.light .bg-white\/10 { background-color: rgba(15, 23, 42, 0.13); }
+html.light .border-white\/10 { border-color: rgba(15, 23, 42, 0.16); }
+html.light .stroke-white\/15 { stroke: rgba(15, 23, 42, 0.28); }
+html.light .stroke-white\/\[0\.06\] { stroke: rgba(15, 23, 42, 0.09); }
+html.light .fill-white { fill: #0f172a; }
+html.light .fill-slate-400 { fill: #475569; }
+html.light .fill-slate-600 { fill: #7c8a9d; }
+html.light .fill-rose-200 { fill: #be123c; }
+html.light .from-white\/25 { --tw-gradient-from: rgba(15, 23, 42, 0.25) var(--tw-gradient-from-position); --tw-gradient-to: rgba(15, 23, 42, 0) var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+html.light ::selection { background: rgba(139, 92, 246, 0.25); }
+
+/* ───────────────────────── Print ─────────────────────────
+   The print handler force-enables html.light first, so the light
+   palette above applies; these rules handle pagination & chrome. */
+@media print {
+  @page { size: A4 landscape; margin: 10mm; }
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  body { background: #fff !important; }
+  .no-print { display: none !important; }
+  section { padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; }
+  header { min-height: auto !important; padding-top: 1rem !important; padding-bottom: 1rem !important; }
+  .glass { backdrop-filter: none; box-shadow: none !important; break-inside: avoid; }
+  .sticky { position: static !important; }
+}
