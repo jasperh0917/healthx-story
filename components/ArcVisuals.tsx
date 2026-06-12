@@ -39,8 +39,7 @@ export function GrowthChart() {
       rx={3}
       className={cls}
       initial={{ height: 0, y: baseY }}
-      whileInView={{ height, y: yTop }}
-      viewport={{ once: true, margin: "-10% 0px" }}
+      animate={{ height, y: yTop }}
       transition={{ delay, duration: 0.8, ease: [...EASE] }}
     />
   );
@@ -205,8 +204,7 @@ function SplitRow({
           <motion.div
             key={s.label}
             initial={{ flexGrow: 0.0001, opacity: 0 }}
-            whileInView={{ flexGrow: s.n, opacity: 1 }}
-            viewport={{ once: true, margin: "-10% 0px" }}
+            animate={{ flexGrow: s.n, opacity: 1 }}
             transition={{ delay: 0.15 + i * 0.15, duration: 0.9, ease: [...EASE] }}
             className={`flex min-w-0 items-center overflow-hidden rounded-md px-3 ${s.cls}`}
           >

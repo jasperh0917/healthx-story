@@ -84,8 +84,7 @@ export function Bars({
         <motion.div
           key={i.label}
           initial={{ opacity: 0, x: -16 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-8% 0px" }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ delay: idx * 0.04, duration: 0.5 }}
           onClick={onPick ? () => onPick(i) : undefined}
           whileHover={onPick ? { x: 4 } : undefined}
@@ -99,8 +98,7 @@ export function Bars({
           <span className="relative h-2 flex-1 overflow-hidden rounded-full bg-white/5">
             <motion.span
               initial={{ width: 0 }}
-              whileInView={{ width: `${(100 * i.value) / max}%` }}
-              viewport={{ once: true, margin: "-8% 0px" }}
+              animate={{ width: `${(100 * i.value) / max}%` }}
               transition={{ delay: 0.15 + idx * 0.04, duration: 1, ease: [0.22, 1, 0.36, 1] }}
               className={`absolute inset-y-0 left-0 rounded-full bg-gradient-to-r ${color}`}
             />
