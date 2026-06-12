@@ -215,7 +215,8 @@ function Scatter({ pts }: { pts: { label: string; aed: number; episodes: number;
   const yTicks = [0.25, 0.5, 0.75, 1].map((f) => my * f);
 
   return (
-    <svg viewBox={`0 0 ${W} ${H}`} className="w-full">
+    <div className="-mx-2 overflow-x-auto px-2">
+    <svg viewBox={`0 0 ${W} ${H}`} className="w-full min-w-[520px]">
       {yTicks.map((t) => (
         <g key={`y${t}`}>
           <line x1={padL} x2={W - padR} y1={y(t)} y2={y(t)} className="stroke-white/[0.06]" strokeDasharray="3 5" />
@@ -261,5 +262,6 @@ function Scatter({ pts }: { pts: { label: string; aed: number; episodes: number;
         );
       })}
     </svg>
+    </div>
   );
 }

@@ -56,7 +56,9 @@ export function GrowthChart() {
         </div>
       </div>
 
-      <svg viewBox={`0 0 ${W} 318`} className="w-full">
+      {/* wide chart: keep it legible on narrow screens, scroll horizontally */}
+      <div className="-mx-2 overflow-x-auto px-2">
+      <svg viewBox={`0 0 ${W} 318`} className="w-full min-w-[600px]">
         {/* scale gridlines */}
         {[50, 100].map((g) => (
           <g key={g}>
@@ -109,6 +111,7 @@ export function GrowthChart() {
           UY 2025 · {y2025.gp.toFixed(1)}M · +{y2025.gpGrowthPct}%
         </text>
       </svg>
+      </div>
 
       <p className="mt-4 font-mono text-[11px] text-slate-500">
         2024 book {y2024.gp.toFixed(1)}M + 2025 renewed {y2025.renewalGp.toFixed(1)}M + new business {y2025.newGp.toFixed(1)}M · lives 9,874 → 11,201 (+{y2025.livesGrowthPct}%)
