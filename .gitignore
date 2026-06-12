@@ -23,3 +23,6 @@ yarn-error.log*
 
 # local tooling caches
 /tmp
+
+# TS incremental build cache
+tsconfig.tsbuildinfo
