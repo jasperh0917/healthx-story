@@ -160,7 +160,8 @@ export default function ClaimsExplorer() {
         />
         <p className="mt-4 font-mono text-[11px] text-slate-500">
           tap a group for what&apos;s inside · chemo &amp; deliveries reclassified out of Z-code
-          &ldquo;wellness&rdquo; into Oncology &amp; Maternity · lifestyle &amp; metabolic still top the table
+          &ldquo;wellness&rdquo; into Oncology &amp; Maternity · lifestyle &amp; metabolic lead the clinical groups
+          (Others = unclassified R-codes)
         </p>
       </div>
 

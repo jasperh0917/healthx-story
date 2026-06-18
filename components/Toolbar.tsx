@@ -113,7 +113,7 @@ export default function Toolbar() {
 
       // 5 · loss ratio
       s = pptx.addSlide();
-      title(s, "2025 — The loss ratio answered", `Projected NLR ${arc.y2025.nlrProjected.toFixed(0)}% — down from 115% matured 2024 · premium +${arc.y2025.avgPremiumGrowthPct}% vs medical inflation +${inflation.y2025.pct}%`);
+      title(s, "2025 — The loss ratio answered", `Projected NLR ${arc.y2025.nlrProjected.toFixed(0)}% — down from 114% matured 2024 · premium +${arc.y2025.avgPremiumGrowthPct}% vs medical inflation +${inflation.y2025.pct}%`);
       stat(s, 0.8, 2.2, `${arc.y2025.nlrProjected.toFixed(1)}%`, "projected NLR · paid + 85% OS, annualised", EMERALD);
       stat(s, 3.9, 2.2, `${arc.y2025.glrProjected.toFixed(1)}%`, "projected GLR");
       stat(s, 7.0, 2.2, arc.y2025.avgPremium.toLocaleString(), `avg premium / member · +${arc.y2025.avgPremiumGrowthPct}%`);
@@ -126,7 +126,7 @@ export default function Toolbar() {
 
       // 6 · census
       s = pptx.addSlide();
-      title(s, "The risk pool — a young book, finally priced like one", "61% aged 26–45, barely 3% past 55. Same census that ran 115% in 2024 now runs at break-even.");
+      title(s, "The risk pool — a young book, finally priced like one", "61% aged 26–45, barely 3% past 55. Same census that ran 114% in 2024 now runs at a profit.");
       const cs = census.all;
       type Cell = { text: string; options?: { bold?: boolean } };
       const rows: Cell[][] = [

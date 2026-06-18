@@ -34,10 +34,10 @@ export default function Page() {
             kicker="We took our market share"
             body={
               <>
-                An <strong className="text-white">AED 61M</strong>, 9,874-life portfolio built
+                An <strong className="text-white">AED 61M</strong>, 9,955-life portfolio built
                 across {y24.groups} corporate groups — in our first year. We committed mistakes:
                 the matured book ran a{" "}
-                <strong className="text-rose-300">115% net loss ratio</strong>. And we learned
+                <strong className="text-rose-300">114% net loss ratio</strong>. And we learned
                 from every one of them.
               </>
             }
@@ -65,9 +65,9 @@ export default function Page() {
             body={
               <>
                 Renewal was the filter — and the right way to read it is by premium, not logos. We
-                shed <strong className="text-white">84% of loss-making premium</strong> and held on
-                to <strong className="text-emerald-300">65% of performing premium</strong>, so{" "}
-                <strong className="text-white">77% of the renewed book</strong> is performing risk.
+                shed <strong className="text-white">81% of loss-making premium</strong> and held on
+                to <strong className="text-emerald-300">67% of performing premium</strong>, so{" "}
+                <strong className="text-white">70% of the renewed book</strong> is performing risk.
                 The groups we lost were the small ones.
               </>
             }
@@ -82,7 +82,7 @@ export default function Page() {
               <>
                 Pruning didn&apos;t shrink the book — premium grew{" "}
                 <strong className="text-white">+{y25.gpGrowthPct}% to AED {y25.gp.toFixed(0)}M</strong>{" "}
-                and lives grew +{y25.livesGrowthPct}% to 11,201, with renewals layered steadily
+                and lives grew +{y25.livesGrowthPct}% to 11,171, with renewals layered steadily
                 under better-priced new business all year.
               </>
             }
@@ -97,7 +97,7 @@ export default function Page() {
               <>
                 Projected UY 2025 NLR is{" "}
                 <strong className="text-emerald-300">{y25.nlrProjected.toFixed(0)}%</strong> — down
-                ~14 points from the 115% the 2024 book matured at. Average premium per member rose{" "}
+                ~18 points from the 114% the 2024 book matured at, and now below break-even. Average premium per member rose{" "}
                 <strong className="text-white">+{y25.avgPremiumGrowthPct}%</strong> — nearly double
                 the <strong className="text-white">+{inflation.y2025.pct}% medical inflation</strong>{" "}
                 we measured in our own claims. By network, Restricted runs profitably, General sits
@@ -159,11 +159,11 @@ export default function Page() {
             kicker="More of the same — by design"
             body={
               <>
-                Q1 2026 wrote <strong className="text-white">AED 22.0M</strong> — our strongest
+                Q1 2026 wrote <strong className="text-white">AED 23.3M</strong> — our strongest
                 first quarter yet. And the steering is showing up in the prices we pay: early-2026
                 unit costs are running{" "}
                 <strong className="text-emerald-300">{Math.abs(inflation.y2026.pct)}% below</strong>{" "}
-                last year for the same services. We&apos;re harnessing our own claims data — 208,897
+                last year for the same services. We&apos;re harnessing our own claims data — 311,157
                 lines of it — and getting <strong className="text-grad">ahead of the curve</strong>.
               </>
             }
@@ -200,7 +200,7 @@ export default function Page() {
               A <span className="text-grad">young book</span> — finally priced like one.
             </>
           }
-          lede="This is the cheapest risk pool in medicine: 61% of members are 26–45, barely 3% are past 55, and the active book is just as young. In 2024 we squandered that advantage at a 115% loss ratio. Today the same young census runs at break-even — and that's the upside story: catch the chronic conditions at 35 instead of 55, and a book this young only gets better from here."
+          lede="This is the cheapest risk pool in medicine: 61% of members are 26–45, barely 3% are past 55, and the active book is just as young. In 2024 we squandered that advantage at a 114% loss ratio. Today the same young census runs at a profit — and that's the upside story: catch the chronic conditions at 35 instead of 55, and a book this young only gets better from here."
         >
           <CensusExplorer />
         </Section>
@@ -249,7 +249,7 @@ export default function Page() {
             <span>
               well<span className="text-grad">x</span> pulse · built from the live policy database
             </span>
-            <span>trr 795 · claims 208,897 · AED</span>
+            <span>trr 892 · claims 311,157 · AED</span>
           </div>
         </footer>
       </main>

@@ -64,7 +64,7 @@ export default function Hero() {
         </p>
         <p className="hero-sub mt-7 max-w-xl text-lg text-slate-400">
           Experience, earned in 2024. Predictability, proven in 2025. Scale, unlocked for 2026.
-          The story of a book that grew almost 40% while its loss ratio fell 14 points — told
+          The story of a book that grew almost 40% while its loss ratio fell 18 points — told
           entirely in our own data.
         </p>
 
