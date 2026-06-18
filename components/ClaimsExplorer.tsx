@@ -93,7 +93,7 @@ export default function ClaimsExplorer() {
         </div>
 
         <div className="glass p-7">
-          <p className="eyebrow mb-5">Claims by relation · mirrors the census</p>
+          <p className="eyebrow mb-5">Claims by relation · spouses punch above their weight</p>
           <Bars
             items={relation.map(([label, v]) => ({
               label,
@@ -105,7 +105,8 @@ export default function ClaimsExplorer() {
             color="from-violet-400 to-rose-400"
           />
           <p className="mt-4 font-mono text-[11px] text-slate-500">
-            claims share tracks member share — no relation over-consumes wildly
+            spouses are 11% of members but 20% of claims — ~1.8&times; per head · maternity is ~17%
+            of their spend
           </p>
         </div>
       </div>

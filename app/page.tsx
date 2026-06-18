@@ -215,7 +215,7 @@ export default function Page() {
               <span className="text-grad">Predictable.</span>
             </>
           }
-          lede="Out-patient takes two of every three dirhams — as expected. Claims by relation mirror the census — as expected. And the cost-per-episode ranking confirms the gut feel too: the providers everyone assumes are the expensive ones — KCH, Al Zahra, Mediclinic — are exactly where the data lands. A book that behaves as expected is a book you can price. Slice everything below by network."
+          lede="Out-patient takes two of every three dirhams — as expected. Claims by relation hold one twist: spouses are 11% of the book but 20% of claims, roughly 1.8× per head, driven by maternity — but maternity is forecastable, so it's priced, not a surprise. And the cost-per-episode ranking confirms the gut feel too: the providers everyone assumes are the expensive ones — KCH, Al Zahra, Mediclinic — are exactly where the data lands. A book whose one exception is this explainable is a book you can price. Slice everything below by network."
         >
           <ClaimsExplorer />
         </Section>
