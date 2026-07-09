@@ -50,6 +50,17 @@ body {
 
 ::selection { background: rgba(139, 92, 246, 0.4); }
 
+/* ── Jasper renewal status badges (hover = 50% darker than base) ── */
+.jstatus { border: none; cursor: pointer; outline: none; transition: background-color 0.12s, color 0.12s; }
+.jstatus-inprogress { background: #eef2f9; color: #40506b; }
+.jstatus-inprogress:hover { background: #778093; color: #fff; }
+.jstatus-renewed { background: #fb9b35; color: #000; }
+.jstatus-renewed:hover { background: #7d4d1a; color: #fff; }
+.jstatus-lost { background: #5e788a; color: #fff; }
+.jstatus-lost:hover { background: #2f3c45; color: #fff; }
+/* tracker row hover — clearly stronger than the resting state */
+.jrow:hover { background: #e9edf5; }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
